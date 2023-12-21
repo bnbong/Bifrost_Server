@@ -27,13 +27,24 @@ repositories {
 extra["springCloudVersion"] = "2023.0.0"
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    implementation("org.springframework.boot:spring-boot-starter-jersey")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.springframework.cloud:spring-cloud-starter-gateway")
-    implementation("org.springframework.cloud:spring-cloud-starter-gateway-mvc")
     compileOnly("org.projectlombok:lombok")
+    runtimeOnly("org.mariadb:r2dbc-mariadb:1.1.3")
+    runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.projectreactor:reactor-test")
+    implementation("org.springframework.boot:spring-boot-starter-jersey")
+    // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
+    runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.104.Final")  // for My Local testing
 }
 
 dependencyManagement {
