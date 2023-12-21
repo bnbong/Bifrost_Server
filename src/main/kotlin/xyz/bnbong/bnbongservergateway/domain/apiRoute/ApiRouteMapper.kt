@@ -4,6 +4,7 @@ import io.r2dbc.spi.Row
 import io.r2dbc.spi.RowMetadata
 import org.springframework.stereotype.Component
 import xyz.bnbong.bnbongservergateway.domain.method.Method
+import xyz.bnbong.bnbongservergateway.domain.serviceInfo.ServiceInfo
 import java.util.function.BiFunction
 
 @Component
@@ -17,6 +18,12 @@ class ApiRouteMapper : BiFunction<Row, RowMetadata, ApiRoute>{
                 id = row.get("METHOD_PK", Int::class.java)!!,
                 name = row.get("METHOD_NM", String::class.java)!!
             ),
+            service = ServiceInfo(
+                id = row.get("SERVICE_PK", Int::class.java)!!,
+                name = row.get("SERVICE_NM", String::class.java)!!,
+                domain = row.get("SERVICE_DOMAIN", String::class.java)!!,
+                index = row.get("SERVICE_INDEX", String::class.java)
+            )
         )
     }
 }

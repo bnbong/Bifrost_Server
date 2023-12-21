@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 import xyz.bnbong.bnbongservergateway.domain.method.Method
+import xyz.bnbong.bnbongservergateway.domain.serviceInfo.ServiceInfo
 
 @Table(name = "API_ROUTE")
 data class ApiRoute(
@@ -20,4 +21,7 @@ data class ApiRoute(
 
     @Transient
     val method: Method,
+
+    @Transient
+    val service: ServiceInfo,
 )

@@ -43,8 +43,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     implementation("org.springframework.boot:spring-boot-starter-jersey")
-    // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
-    runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.104.Final")  // for My Local testing
+
+    implementation("io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64") // for My Local testing
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
 }
 
 dependencyManagement {

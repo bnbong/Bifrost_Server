@@ -7,10 +7,12 @@ data class ApiRouteResponseDto(
     val id: Int,
     val path: String,
     val methodName: String,
+    val serviceDomain: String,
 ){
     constructor(apiRoute: ApiRoute):this(
         id = apiRoute.id,
         path = apiRoute.path,
         methodName = apiRoute.method.name,
+        serviceDomain = apiRoute.service.domain,
     )
 }
