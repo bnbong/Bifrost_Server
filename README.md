@@ -6,7 +6,8 @@ Bnbong Server 에서 작동되는 각 Micro service Container 들의 Endpoint에
 
 ## Stack
  - Kotlin
+ - JAVA 17 & JVM 1.9.20
  - Spring Cloud Gateway
- - Spring Boot
+ - Spring Boot 3.2.0
  - Gradle
- - Docker
+ - Docker (dev : MacOS M1, prod : Linux ARM)
