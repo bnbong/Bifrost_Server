@@ -1,4 +1,6 @@
-# BnbongServerGateway
+# Bifrost_Server
+
+![bifrost_logo.webp](..%2F..%2F..%2F..%2FDownloads%2Fbifrost_logo.webp)
 
 Kotlin Spring Cloud Gateway로 작성된 Bnbong Server 에서 사용할 Gateway 서비스 입니다.
 
